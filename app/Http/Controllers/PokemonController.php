@@ -35,9 +35,10 @@ class PokemonController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Pokemon $pokemon)
+    public function show(string $id)
     {
-        //
+        $pokemons = Pokemon::findOrFail($id);
+        return view("pokemons.show", compact("pokemons"));
     }
 
     /**
@@ -59,8 +60,5 @@ class PokemonController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Pokemon $pokemon)
-    {
-        //
-    }
+    public function destroy(Pokemon $pokemon) {}
 }
