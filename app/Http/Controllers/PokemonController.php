@@ -21,7 +21,7 @@ class PokemonController extends Controller
      */
     public function create()
     {
-        //
+        return view("pokemons.create");
     }
 
     /**
@@ -29,7 +29,21 @@ class PokemonController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $formData = $request->all();
+
+        $pokemon = new Pokemon();
+        $pokemon->number = $formData['number'];
+        $pokemon->name = $formData['name'];
+        $pokemon->ability = $formData['ability'];
+        $pokemon->type_1 = $formData['type_1'];
+        $pokemon->type_2 = $formData['type_2'];
+        $pokemon->height = $formData['height'];
+        $pokemon->weight = $formData['weight'];
+        $pokemon->generation = $formData['generation'];
+        $pokemon->image_url = $formData['image_url'];
+        $pokemon->save();
+
+        return redirect()->route("pokemon.show", ["id" => $pokemon->id]);
     }
 
     /**
@@ -37,8 +51,8 @@ class PokemonController extends Controller
      */
     public function show(string $id)
     {
-        $pokemons = Pokemon::findOrFail($id);
-        return view("pokemons.show", compact("pokemons"));
+        $pokemon = Pokemon::findOrFail($id);
+        return view("pokemons.show", compact("pokemon"));
     }
 
     /**

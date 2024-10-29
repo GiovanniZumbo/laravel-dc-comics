@@ -19,4 +19,6 @@ Route::get('/', function () {
 });
 
 Route::get('/pokemons', [PokemonController::class, "index"])->name("pokemon.index");
+Route::get('/pokemons/create', [PokemonController::class, "create"])->name("pokemon.create");
+Route::post('/pokemons', [PokemonController::class, "store"])->name("pokemon.store");
 Route::get('/pokemons/{id}', [PokemonController::class, "show"])->name("pokemon.show");
