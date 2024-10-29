@@ -13,6 +13,10 @@
 
     @section('main-content')
         <h1 class="text-center">Homepage</h1>
+
+        <div class="container">
+            <p>Use your Pokedex to explore all the Kanto Pokemon!</p>
+        </div>
     @endsection
 
 </body>
