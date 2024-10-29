@@ -5,17 +5,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-
+    <title>Pokedex - Pokemon Name</title>
 </head>
 
-@include('partials.header')
-
 <body>
-    @yield('main-content')
-    @vite('resources/js/app.js')
-</body>
+    @extends('layout.app')
 
-@include('partials.footer')
+    @section('main-content')
+        <h1 class="text-center">Pokemon Name</h1>
+    @endsection
+
+</body>
 
 </html>
