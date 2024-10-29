@@ -12,12 +12,12 @@
     @extends('layout.app')
 
     @section('main-content')
-        <h1 class="text-center">Pokemon List</h1>
+        <h1 class="text-center py-3">Pokemon List</h1>
 
         <div class="container">
-            <a href="{{ route('pokemon.create') }}" class="btn btn-success">Add Pokemon</a>
+            <a href="{{ route('pokemon.create') }}" class="btn btn-success mb-3">Add Pokemon</a>
 
-            <table class="table table-hover">
+            <table class="table table-hover align-middle">
                 <thead>
                     <tr class="text-center">
                         <th scope="col">Number</th>
@@ -35,17 +35,18 @@
                 <tbody>
                     @forelse ($pokemons as $index => $Pokemon)
                         <tr>
-                            <td>00{{ $Pokemon->number }}</td>
-                            <th scope="row">{{ $Pokemon->name }}</th>
-                            <td>{{ $Pokemon->type_1 }}</td>
-                            <td>{{ $Pokemon->type_2 ?: '-' }}</td>
-                            <td>{{ $Pokemon->ability }}</td>
-                            <td>{{ $Pokemon->height }}</td>
-                            <td>{{ $Pokemon->weight }}</td>
-                            <td>{{ $Pokemon->generation }}</td>
-                            <td>{{ $Pokemon->sprite }}</td>
-                            <td><img src="{{ $Pokemon->image_url }}" alt="image"></td>
-                            <td><a href="{{ route('pokemon.show', $Pokemon->id) }}" class="btn btn-success ">Details</a>
+                            <td align="center">{{ $Pokemon->number }}</td>
+                            <th scope="row" align="center">{{ $Pokemon->name }}</th>
+                            <td align="center">{{ $Pokemon->type_1 }}</td>
+                            <td align="center">{{ $Pokemon->type_2 ?: '-' }}</td>
+                            <td align="center">{{ $Pokemon->ability }}</td>
+                            <td align="center">{{ $Pokemon->height }}</td>
+                            <td align="center">{{ $Pokemon->weight }}</td>
+                            <td align="center">{{ $Pokemon->generation }}</td>
+                            <td align="center">{{ $Pokemon->sprite }}</td>
+                            <td align="center"><img src="{{ $Pokemon->image_url }}" alt="image"></td>
+                            <td align="center"><a href="{{ route('pokemon.show', $Pokemon->id) }}"
+                                    class="btn btn-success ">Details</a>
                             </td>
 
                         </tr>

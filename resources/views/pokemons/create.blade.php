@@ -12,51 +12,56 @@
     @extends('layout.app')
 
     @section('main-content')
-        <h1>Add a new Pokemon!</h1>
+        <h1 class="text-center py-3">Add a new Pokemon!</h1>
 
         <div class="container">
-            <form method="POST" action="{{ route('pokemon.store') }}">
-                @csrf
-                <div class="mb-3">
-                    <label for="number" class="form-label">Pokedex Number</label>
-                    <input type="number" class="form-control" id="number" name="number">
-                </div>
-                <div class="mb-3">
-                    <label for="name" class="form-label">Name</label>
-                    <input type="text" class="form-control" id="name" name="name">
-                </div>
-                <div class="mb-3">
-                    <label for="ability" class="form-label">Ability</label>
-                    <input type="text" class="form-control" id="ability" name="ability">
-                </div>
-                <div class="mb-3">
-                    <label for="type_1" class="form-label">Type 1</label>
-                    <input type="text" class="form-control" id="type_1" name="type_1">
-                </div>
-                <div class="mb-3">
-                    <label for="type_2" class="form-label">Type 2</label>
-                    <input type="text" class="form-control" id="type_2" name="type_2">
-                </div>
-                <div class="mb-3">
-                    <label for="height" class="form-label">Height</label>
-                    <input type="number" class="form-control" id="height" name="height">
-                </div>
-                <div class="mb-3">
-                    <label for="weight" class="form-label">Weight</label>
-                    <input type="number" class="form-control" id="weight" name="weight">
-                </div>
-                <div class="mb-3">
-                    <label for="generation" class="form-label">Generation</label>
-                    <input type="number" class="form-control" id="generation" name="generation">
-                </div>
-                <div class="mb-3">
-                    <label for="image_url" class="form-label">Image URL</label>
-                    <input type="text" class="form-control" id="image_url" name="image_url">
-                </div>
+            <div class="row d-flex justify-content-center">
+                <div class="col-6">
 
-                <button type="submit" class="btn btn-success">Send</button>
-                <button type="reset" class="btn btn-danger">Reset</button>
-            </form>
+                    <form method="POST" action="{{ route('pokemon.store') }}">
+                        @csrf
+                        <div class="mb-3">
+                            <label for="number" class="form-label">Pokedex Number</label>
+                            <input type="number" class="form-control" id="number" name="number">
+                        </div>
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Name</label>
+                            <input type="text" class="form-control" id="name" name="name">
+                        </div>
+                        <div class="mb-3">
+                            <label for="ability" class="form-label">Ability</label>
+                            <input type="text" class="form-control" id="ability" name="ability">
+                        </div>
+                        <div class="mb-3">
+                            <label for="type_1" class="form-label">Type 1</label>
+                            <input type="text" class="form-control" id="type_1" name="type_1">
+                        </div>
+                        <div class="mb-3">
+                            <label for="type_2" class="form-label">Type 2</label>
+                            <input type="text" class="form-control" id="type_2" name="type_2">
+                        </div>
+                        <div class="mb-3">
+                            <label for="height" class="form-label">Height</label>
+                            <input type="number" class="form-control" id="height" name="height">
+                        </div>
+                        <div class="mb-3">
+                            <label for="weight" class="form-label">Weight</label>
+                            <input type="number" class="form-control" id="weight" name="weight">
+                        </div>
+                        <div class="mb-3">
+                            <label for="generation" class="form-label">Generation</label>
+                            <input type="number" class="form-control" id="generation" name="generation">
+                        </div>
+                        <div class="mb-3">
+                            <label for="image_url" class="form-label">Image URL</label>
+                            <input type="text" class="form-control" id="image_url" name="image_url">
+                        </div>
+
+                        <button type="submit" class="btn btn-success">Send</button>
+                        <button type="reset" class="btn btn-danger">Reset</button>
+                    </form>
+                </div>
+            </div>
         </div>
     @endsection
 
