@@ -32,6 +32,7 @@
                         <th scope="col">Options</th>
                     </tr>
                 </thead>
+
                 <tbody>
                     @forelse ($pokemons as $index => $pokemon)
                         <tr>
@@ -51,11 +52,10 @@
                                     @method('DELETE')
                                     @csrf
                                     <input type="submit" class="btn btn-danger" value="Delete">
-
                                 </form>
                             </td>
-
                         </tr>
+
                     @empty
                         <p>No Pokemon to show.</p>
                     @endforelse

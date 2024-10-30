@@ -30,17 +30,8 @@ class PokemonController extends Controller
     public function store(Request $request)
     {
         $formData = $request->all();
-
-        $pokemon = new Pokemon();
-        $pokemon->number = $formData['number'];
-        $pokemon->name = $formData['name'];
-        $pokemon->ability = $formData['ability'];
-        $pokemon->type_1 = $formData['type_1'];
-        $pokemon->type_2 = $formData['type_2'];
-        $pokemon->height = $formData['height'];
-        $pokemon->weight = $formData['weight'];
-        $pokemon->generation = $formData['generation'];
-        $pokemon->image_url = $formData['image_url'];
+        $pokemon = new Pokemon;
+        $pokemon->fill($formData);
         $pokemon->save();
 
         return redirect()->route("pokemon.show", ["id" => $pokemon->id]);
@@ -73,9 +64,9 @@ class PokemonController extends Controller
 
         $pokemon = Pokemon::findOrFail($id);
 
-        //Opzione 1 (Necessario per il metodo Create)
-        // $pokemon->fill($formData);
-        // $pokemon->save();
+        //  Opzione 1 (Necessario per il metodo Create)
+        //  $pokemon->fill($formData);
+        //  $pokemon->save();
 
         //Opzione 2
         $pokemon->update($formData);
