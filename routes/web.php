@@ -18,7 +18,11 @@ Route::get('/', function () {
     return view('pages.homepage');
 })->name("home");
 
-Route::get('/pokemons', [PokemonController::class, "index"])->name("pokemon.index");
-Route::get('/pokemons/create', [PokemonController::class, "create"])->name("pokemon.create");
-Route::post('/pokemons', [PokemonController::class, "store"])->name("pokemon.store");
-Route::get('/pokemons/{id}', [PokemonController::class, "show"])->name("pokemon.show");
+Route::prefix("/pokemons")->name("pokemon.")->group(function () {
+    Route::get('/', [PokemonController::class, "index"])->name("index");
+    Route::get('/create', [PokemonController::class, "create"])->name("create");
+    Route::post('/', [PokemonController::class, "store"])->name("store");
+    Route::get('/{id}', [PokemonController::class, "show"])->name("show");
+    Route::get('/{id}/edit', [PokemonController::class, "edit"])->name("edit");
+    Route::put('/{id}', [PokemonController::class, "update"])->name("update");
+});

@@ -29,7 +29,7 @@
                         <th scope="col">Weight</th>
                         <th scope="col">Generation</th>
                         <th scope="col">Sprite</th>
-                        <th scope="col">Page</th>
+                        <th scope="col">Options</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -47,6 +47,9 @@
                             <td align="center"><img src="{{ $Pokemon->image_url }}" alt="image"></td>
                             <td align="center"><a href="{{ route('pokemon.show', $Pokemon->id) }}"
                                     class="btn btn-success ">Details</a>
+                            </td>
+                            <td align="center"><a href="{{ route('pokemon.edit', $Pokemon->id) }}"
+                                    class="btn btn-warning ">Edit</a>
                             </td>
 
                         </tr>
