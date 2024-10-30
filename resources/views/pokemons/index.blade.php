@@ -33,23 +33,26 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @forelse ($pokemons as $index => $Pokemon)
+                    @forelse ($pokemons as $index => $pokemon)
                         <tr>
-                            <td align="center">{{ $Pokemon->number }}</td>
-                            <th scope="row" align="center">{{ $Pokemon->name }}</th>
-                            <td align="center">{{ $Pokemon->type_1 }}</td>
-                            <td align="center">{{ $Pokemon->type_2 ?: '-' }}</td>
-                            <td align="center">{{ $Pokemon->ability }}</td>
-                            <td align="center">{{ $Pokemon->height }}</td>
-                            <td align="center">{{ $Pokemon->weight }}</td>
-                            <td align="center">{{ $Pokemon->generation }}</td>
-                            <td align="center">{{ $Pokemon->sprite }}</td>
-                            <td align="center"><img src="{{ $Pokemon->image_url }}" alt="image"></td>
-                            <td align="center"><a href="{{ route('pokemon.show', $Pokemon->id) }}"
-                                    class="btn btn-success ">Details</a>
-                            </td>
-                            <td align="center"><a href="{{ route('pokemon.edit', $Pokemon->id) }}"
-                                    class="btn btn-warning ">Edit</a>
+                            <td align="center">{{ $pokemon->number }}</td>
+                            <th scope="row" align="center">{{ $pokemon->name }}</th>
+                            <td align="center">{{ $pokemon->type_1 }}</td>
+                            <td align="center">{{ $pokemon->type_2 ?: '-' }}</td>
+                            <td align="center">{{ $pokemon->ability }}</td>
+                            <td align="center">{{ $pokemon->height }}</td>
+                            <td align="center">{{ $pokemon->weight }}</td>
+                            <td align="center">{{ $pokemon->generation }}</td>
+                            <td align="center"><img src="{{ $pokemon->image_url }}" alt="image"></td>
+                            <td align="center">
+                                <a href="{{ route('pokemon.show', $pokemon->id) }}" class="btn btn-success ">Details</a>
+                                <a href="{{ route('pokemon.edit', $pokemon->id) }}" class="btn btn-warning ">Edit</a>
+                                <form action="{{ route('pokemon.delete', $pokemon->id) }}" method="POST" class="d-inline">
+                                    @method('DELETE')
+                                    @csrf
+                                    <input type="submit" class="btn btn-danger" value="Delete">
+
+                                </form>
                             </td>
 
                         </tr>

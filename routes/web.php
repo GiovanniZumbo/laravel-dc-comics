@@ -25,4 +25,5 @@ Route::prefix("/pokemons")->name("pokemon.")->group(function () {
     Route::get('/{id}', [PokemonController::class, "show"])->name("show");
     Route::get('/{id}/edit', [PokemonController::class, "edit"])->name("edit");
     Route::put('/{id}', [PokemonController::class, "update"])->name("update");
+    Route::delete('/{id}', [PokemonController::class, "destroy"])->name("delete");
 });

@@ -86,5 +86,11 @@ class PokemonController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Pokemon $pokemon) {}
+    public function destroy(string $id)
+    {
+        $pokemon = Pokemon::findOrFail($id);
+        $pokemon->delete();
+
+        return redirect()->route("pokemon.index");
+    }
 }
