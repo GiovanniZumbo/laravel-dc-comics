@@ -42,11 +42,11 @@
                         </div>
                         <div class="mb-3">
                             <label for="height" class="form-label">Height</label>
-                            <input type="number" class="form-control" id="height" name="height">
+                            <input type="number" step="0.01" class="form-control" id="height" name="height">
                         </div>
                         <div class="mb-3">
                             <label for="weight" class="form-label">Weight</label>
-                            <input type="number" class="form-control" id="weight" name="weight">
+                            <input type="number" step="0.01" class="form-control" id="weight" name="weight">
                         </div>
                         <div class="mb-3">
                             <label for="generation" class="form-label">Generation</label>

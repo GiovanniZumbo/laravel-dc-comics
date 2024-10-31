@@ -11,9 +11,13 @@
 
 @include('partials.header')
 
-<body>
-    @yield('main-content')
+<body class="d-flex flex-column">
+    <main class="flex-grow-1">
+        @yield('main-content')
+    </main>
     @vite('resources/js/app.js')
+
+    @yield('scripts')
 </body>
 
 @include('partials.footer')

@@ -48,7 +48,8 @@
                             <td align="center">
                                 <a href="{{ route('pokemon.show', $pokemon->id) }}" class="btn btn-success ">Details</a>
                                 <a href="{{ route('pokemon.edit', $pokemon->id) }}" class="btn btn-warning ">Edit</a>
-                                <form action="{{ route('pokemon.delete', $pokemon->id) }}" method="POST" class="d-inline">
+                                <form action="{{ route('pokemon.delete', $pokemon->id) }}" method="POST"
+                                    class="d-inline pokemon-del" data-name="{{ $pokemon->name }}">
                                     @method('DELETE')
                                     @csrf
                                     <input type="submit" class="btn btn-danger" value="Delete">
@@ -61,8 +62,11 @@
                     @endforelse
                 </tbody>
             </table>
-        @endsection
-    </div>
+        </div>
+    @endsection
 </body>
+@section('scripts')
+    @vite('resources/js/script.js');
+@endsection
 
 </html>
