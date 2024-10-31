@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StorePokemonRequest;
 use App\Models\Pokemon;
 use Illuminate\Http\Request;
 
@@ -27,8 +28,11 @@ class PokemonController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(StorePokemonRequest $request)
     {
+        $request->validate();
+
+        // Adding elements into DB
         $formData = $request->all();
         $pokemon = new Pokemon;
         $pokemon->fill($formData);
