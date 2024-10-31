@@ -26,7 +26,7 @@ class StorePokemonRequest extends FormRequest
             "name" => "required|string|min_digits:3",
             "ability" => "required|string|min_digits:3",
             "type_1" => "required|string|min_digits:3",
-            "type_2" => "string|min_digits:3",
+            "type_2" => "nullable|string|min_digits:3",
             "height" => "required|decimal:2|min:0",
             "weight" => "required|decimal:2|min:0",
             "generation" => "required|numeric|min:0",
