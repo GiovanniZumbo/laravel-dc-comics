@@ -30,10 +30,9 @@ class PokemonController extends Controller
      */
     public function store(StorePokemonRequest $request)
     {
-        $request->validate();
 
         // Adding elements into DB
-        $formData = $request->all();
+        $formData = $request->validated();
         $pokemon = new Pokemon;
         $pokemon->fill($formData);
         $pokemon->save();
@@ -62,10 +61,9 @@ class PokemonController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(StorePokemonRequest $request, string $id)
     {
-        $formData = $request->all();
-
+        $formData = $request->validated();
         $pokemon = Pokemon::findOrFail($id);
 
         //  Opzione 1 (Necessario per il metodo Create)

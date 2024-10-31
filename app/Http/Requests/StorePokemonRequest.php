@@ -23,12 +23,12 @@ class StorePokemonRequest extends FormRequest
     {
         return [
             "number" => "required|numeric|min:0",
-            "name" => "required|string|min_digits:3",
-            "ability" => "required|string|min_digits:3",
-            "type_1" => "required|string|min_digits:3",
-            "type_2" => "nullable|string|min_digits:3",
-            "height" => "required|decimal:2|min:0",
-            "weight" => "required|decimal:2|min:0",
+            "name" => "required|string|min:3",
+            "ability" => "required|string|min:3",
+            "type_1" => "required|string|min:3",
+            "type_2" => "nullable|string|min:3",
+            "height" => "required|decimal:1,2|min:0",
+            "weight" => "required|decimal:1,2|min:0",
             "generation" => "required|numeric|min:0",
             "image_url" => "required|url",
         ];
@@ -49,8 +49,7 @@ class StorePokemonRequest extends FormRequest
 
             //@Generics
             "string" => "Il valore inserito non è valido. Devi inserire solo lettere.",
-            "min_digits" => "Devono essere presenti almeno 3 caratteri.",
-
+            "min" => "Devono essere presenti almeno 3 caratteri.",
         ];
     }
 }

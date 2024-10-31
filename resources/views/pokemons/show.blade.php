@@ -18,7 +18,7 @@
             <div class="card" style="width: 18rem;">
                 <img src="{{ $pokemon['image_url'] }}" class="card-img-top" alt="...">
                 <div class="card-body">
-                    <h5 class="card-title">Nome </h5>
+                    <h5 class="card-title">{{ $pokemon->name }} </h5>
                     <p class="card-text">
                     <ul class="list-unstyled">
                         <li>Number: 00{{ $pokemon['number'] }}</li>
